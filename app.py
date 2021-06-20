@@ -4,7 +4,7 @@ import uuid
 
 app = Flask(__name__)
 app.static_folder = 'static'
-app.secret_key = "chave"
+app.secret_key = os.urandom(24)
 
 
 @app.route('/', methods=["POST", "GET"])

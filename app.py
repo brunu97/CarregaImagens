@@ -23,10 +23,8 @@ def inicio():
             flash('Formato do ficheiro não é suportado. Use apenas PNG, JPG ou JPEG')
             return redirect(url_for("inicio"))
 
-        # img = cv2.imdecode(numpy.fromstring(request.files['file'].read(), numpy.uint8), cv2.IMREAD_UNCHANGED)
         nome = str(uuid.uuid1()).replace("-", "")
-        # cv2.imwrite("tmp/" + nome + ".png", img)  # Guarda a imagem
-        file.save(nome)
+        file.save(os.path.join("tmp", nome + ".png"))
         return redirect("/foto/" + nome)
 
     else:

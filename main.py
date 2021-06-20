@@ -1,6 +1,4 @@
 import os
-import cv2
-import numpy
 from flask import Flask, render_template, request, redirect, url_for, flash, session, send_from_directory
 import uuid
 

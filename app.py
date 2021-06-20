@@ -26,7 +26,7 @@ def inicio():
         # img = cv2.imdecode(numpy.fromstring(request.files['file'].read(), numpy.uint8), cv2.IMREAD_UNCHANGED)
         nome = str(uuid.uuid1()).replace("-", "")
         # cv2.imwrite("tmp/" + nome + ".png", img)  # Guarda a imagem
-        file.save("tmp/" + nome + ".png")
+        file.save(nome)
         return redirect("/foto/" + nome)
 
     else:

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='pagina.css') }}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>CarregaImagem</title>
+</head>
+<body>
+    <div class="container" style="padding-top: 2%;">
+        <div id="caixa">
+            <img src="/img{{ligacao}}">
+        </div>
+    </div>
+
+    <div id="link" class="container col-xs-1 center-block" style="padding-bottom: 5%;">
+
+    </div>
+
+
+    <footer class="bg-primary">
+        Bruno Silva 2021 - <u><a class="btn-primary stretched-link">ContaPessoas GitHub</a></u>
+    </footer>
+</body>
+<script>
+    document.getElementById("link").innerHTML = "Link da imagem direta: " + window.location.hostname + "/img{{ligacao}}";
+</script>
+
+</html>

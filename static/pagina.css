@@ -1,0 +1,37 @@
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: red;
+	color: white;
+	text-align: center;
+ }
+
+
+img {
+  display: block;
+  max-height: 50%;
+  max-width: 80%;
+  margin: auto;
+}
+
+#caixa {
+    padding: 10px;
+	border-radius: 20px;
+	border: 2px solid rgb(0, 132, 255);
+  margin-bottom: 5%;
+}
+
+#carregar, espera {
+    padding: 50px;
+    margin: 5%;
+    border-radius: 20px;
+}
+
+#guia {
+  margin-bottom: 5%;
+  padding: 10px;
+}
+
+

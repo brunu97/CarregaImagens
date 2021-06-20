@@ -4,7 +4,7 @@ import uuid
 
 app = Flask(__name__)
 app.static_folder = 'static'
-app.secret_key = "dafasdfef"
+app.secret_key = os.urandom(24)
 
 
 @app.route('/', methods=["POST", "GET"])
@@ -25,10 +25,17 @@ def inicio():
 
         nome = str(uuid.uuid1()).replace("-", "")
         file.save(os.path.join("tmp", nome + ".png"))
+        if "imagens" not in session:
+            session["imagens"] = []
+        lista = session["imagens"]
+        lista.append(request.url_root + "foto/" + nome)
+        session["imagens"] = lista
         return redirect("/foto/" + nome)
 
     else:
-        return render_template("index.html", fotos=["a", "b"])
+        if "imagens" not in session:
+            session["imagens"] = []
+        return render_template("index.html", fotos=session["imagens"])
 
 
 @app.route('/img<string:nomeImg>')  # Obtem Imagem

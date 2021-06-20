@@ -32,25 +32,7 @@
 
 
             </div>
-
-            <div class="row d-flex justify-content-center">
-                <div class="card" id="guia">
-                   <ul class="list-group">
-                       <li class="list-group-item"><b>1</b> - Carregue uma imagem, do formato PNG, JPG ou JPEG</li>
-                      <li class="list-group-item"><b>2</b> - Espere uns segundos e obtenha o link!</li>
-                    </ul>
-
-                     <ul class="list-group" style="padding-top: 1%;">
-                         Links de fotos carregadas anteriormente:
-                         {%for i in fotos %}
-                            <li class="list-group-item">{{i}}</li>
-                         {% endfor %}
-                    </ul>
-                </div>
-            </div>
-
-
-        {% with msg = get_flashed_messages() %}
+            {% with msg = get_flashed_messages() %}
             {% if msg %}
                 {% for m in msg %}
                     <div style="margin: 10px" class="alert alert-danger" role="alert">
@@ -58,7 +40,27 @@
                     </div>
                 {% endfor %}
             {% endif %}
-        {% endwith %}
+            {% endwith %}
+            <div class="row d-flex justify-content-center">
+                <div class="card" id="guia">
+                   <ul class="list-group">
+                       <li class="list-group-item"><b>1</b> - Carregue uma imagem, do formato PNG, JPG ou JPEG</li>
+                      <li class="list-group-item"><b>2</b> - Espere uns segundos e obtenha o link!</li>
+                    </ul>
+
+                    {% if fotos %}
+                     <ul class="list-group" style="padding-top: 1%;">
+                         Links de fotos carregadas anteriormente:
+                         {%for i in fotos %}
+                            <li class="list-group-item"> <a href="{{i}}">{{i}}</a> </li>
+                         {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+            </div>
+
+
+
         </div>
     </div>
 

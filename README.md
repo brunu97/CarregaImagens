@@ -5,5 +5,3 @@ Aplicação web simples para fazer upload de imagens, as imagens previamente car
 
 Criado com Flask e Python
 UI em Bootstrap
-
-Demo ao vivo: https://carregaimagens.herokuapp.com (A cada 30 minutos de inatividade do sistema todas as imagens guardadas são apagadas) 
